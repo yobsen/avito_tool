@@ -1,5 +1,4 @@
 {
-  "bin": "index.js",
   "name": "avito-tool",
   "version": "1.0.0",
   "description": "Avito scrapping tool",
@@ -15,7 +14,6 @@
     "express": "^4.19.2",
     "pg": "^8.12.0",
     "puppeteer": "^22.13.0",
-    "puppeteer-core": "^22.13.0",
-    "tesseract.js": "^5.1.0"
+    "puppeteer-core": "^22.13.0"
   }
 }
