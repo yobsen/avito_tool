@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const db = require('./queries')
 const app = express()
 const port = 3000
 
@@ -13,15 +14,11 @@ app.get('/', (request, response) => {
   response.send('🐷🐖🐽')
 })
 
+app.get('/flats', db.getFlats)
+app.get('/flats/:avito_id', db.getFlatById)
+app.post('/flats', db.createFlat)
+app.delete('/flats/:avito_id', db.deleteFlat)
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
-})
-
-const Pool = require('pg').Pool
-const pool = new Pool({
-  user: 'manya',
-  host: 'localhost',
-  database: 'avito',
-  password: 'password',
-  port: 5432,
 })
